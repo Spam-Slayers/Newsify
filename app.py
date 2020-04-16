@@ -4,7 +4,7 @@ import source as sr
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/home')
 def Newsify_DashBoard():
     return render_template('home.html')
 
