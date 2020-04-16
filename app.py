@@ -8,6 +8,10 @@ app = Flask(__name__)
 def Newsify_DashBoard():
     return render_template('home.html')
 
+@app.route('/')
+def redirection():
+    return redirect('/home')
+
 @app.route('/result', methods=['POST'])
 def result():
     if request.method == "POST":
