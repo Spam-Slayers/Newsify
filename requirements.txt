@@ -58,7 +58,7 @@ PyMsgBox==1.0.7
 pynput==1.6.8
 pyparsing==2.4.6
 pyperclip==1.8.0
-pypiwin32==219
+pypiwin32==223
 PyQt5==5.14.1
 PyQt5-sip==12.7.1
 PyRect==0.1.4
