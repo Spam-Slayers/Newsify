@@ -1,16 +1,17 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 import source as sr
 
 app = Flask(__name__)
+
+@app.route('/')
+def redirection():
+    return redirect('/home')
 
 
 @app.route('/home')
 def Newsify_DashBoard():
     return render_template('home.html')
 
-@app.route('/')
-def redirection():
-    return redirect('/home')
 
 @app.route('/result', methods=['POST'])
 def result():
