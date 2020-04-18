@@ -13,10 +13,14 @@
             <strong style="color: red">{{ truth }}</strong>
         {% endif %}
     </h1>
-
-        {% for i in links %}
-            <div class="links"><a href="{{ links[i] }}"><h5>{{ i }}</h5><br/></a></div>
-        {% endfor %}
+        
+    <h2 align="center">
+        The words countered in real news are: {{ intersection }}
+    </h2>
+        
+    {% for i in links %}
+        <div class="links"><a href="{{ links[i] }}"><h5>{{ i }}</h5><br/></a></div>
+    {% endfor %}
 
     </body>
 </html>
