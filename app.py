@@ -22,10 +22,10 @@ def result():
         a=sr.supreme(keywords,newsTitle)
         truth=a["truthfulness"]
         links=a["links"]
+        intersection=a["intersection"]
 
 
-
-    return render_template('result.html', truth = truth,links=links)
+    return render_template('result.html', truth = truth,intersection=intersection,links=links)
 
 
 if __name__ == '__main__':
