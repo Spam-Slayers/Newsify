@@ -6,21 +6,29 @@
         <link href="../static/result.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-    <h1 align="center">The news is
+
         {% if truth==True %}
-            <strong style="color: forestgreen">{{ truth }}</strong>
+            <h1 align="center">The news is <strong style="color: forestgreen">{{ truth }}</strong>
+            </h1>
+            <h2 align="center">
+                The words countered in real news are: {{ intersection }}
+            </h2>
+
+            {% for i in links %}
+                <div class="links"><a href="{{ links[i] }}"><h5>{{ i }}</h5><br/></a></div>
+            {% endfor %}
+
         {% else %}
-            <strong style="color: red">{{ truth }}</strong>
+            <h1 align="center">The news is <strong style="color: red">{{ truth }}</strong></h1>
+            {% for i in latest_news %}
+                <div class="links"><h5>{{ i }}</h5><br/></div>
+            {% endfor %}
         {% endif %}
-    </h1>
-        
-    <h2 align="center">
-        The words countered in real news are: {{ intersection }}
-    </h2>
-        
-    {% for i in links %}
-        <div class="links"><a href="{{ links[i] }}"><h5>{{ i }}</h5><br/></a></div>
-    {% endfor %}
+
+
+
+
+
 
     </body>
 </html>
