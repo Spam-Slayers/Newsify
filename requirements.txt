@@ -9,3 +9,4 @@ newsapi==0.1.1
 newsapi-python==0.2.6
 requests==2.23.0
 pytrends==4.7.2
+plotly==4.6.0

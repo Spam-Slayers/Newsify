@@ -35,7 +35,9 @@ def result():
 
 
     return render_template('result.html', truth = truth,intersection=intersection,links=links,latest_links=latest_links)
-
+@app.route('/visualization',methods=['POST'])
+def graph():
+    return render_template('graph.html')
 
 if __name__ == '__main__':
     app.debug = True
