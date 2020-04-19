@@ -1,12 +1,17 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 import source as sr
 
 app = Flask(__name__)
 
-
 @app.route('/')
+def redirection():
+    return redirect('/home')
+
+
+@app.route('/home')
 def Newsify_DashBoard():
     return render_template('home.html')
+
 
 @app.route('/result', methods=['POST'])
 def result():
@@ -17,10 +22,10 @@ def result():
         a=sr.supreme(keywords,newsTitle)
         truth=a["truthfulness"]
         links=a["links"]
+        intersection=a["intersection"]
 
 
-
-    return render_template('result.html', truth = truth,links=links)
+    return render_template('result.html', truth = truth,intersection=intersection,links=links)
 
 
 if __name__ == '__main__':
