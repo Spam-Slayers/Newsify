@@ -1,33 +1,77 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Newsify</title>
-        <link href="../static/styles.css" rel="stylesheet" type="text/css"/>
-        <script>
-                $(document).ready(function() {
-                    $('.chips-placeholder').materialChip({
-                    placeholder: 'Enter a tag',
-                    secondaryPlaceholder: '+Tag',
-                });
-}               )
-            </script>
-    </head>
-    <body>
-        <h1>Newsify</h1>
-        <div class="try"><form method="POST" action="/result" >
-            <input type="text" name="newsTitle" placeholder=" Search by news title" ><br><br>
+<head>
+    <title>Newsify</title>
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <link href="../static/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1 class="heading1">Newsify</h1>
+    <section id="form" class="try">
+    <form method="POST" action="/result" >
+        <input type="text" name="newsTitle" placeholder=" Search by news title" ><br><br>
+
+        <input type="submit" value="Look Up" > </form>
+</section>
+<script> ScrollReveal().reveal('.try'); ScrollReveal().reveal('.heading1');</script>
+
+<hr class="new1">
+<br>
+<div class="subhead"> <h2>Covid-19 Cases in World</h2></div>
+    <div class="wrapper">
+<div class="box_wrapper">
+    <div class="box">
+      <h2>Confirmed Cases</h2>
+      <p>{{ globalcases }}</p>
+
+    </div>
+
+    <div class="box">
+      <h2>Active</h2>
+      <p>{{ globalactive }}</p>
+
+    </div>
+    <div class="box">
+      <h2>Recovered</h2>
+      <p>{{ globalrecovered }}</p>
+    </div>
+    <div class="box">
+      <h2>Total Deaths</h2>
+      <p>{{ globaldeaths }}</p>
+    </div>
+
+  </div>
+ </div>
 
 
-            <input type="text" id="keywords" name="keywords" placeholder=" Enter tags" ><br><br>
+<!--india-->
+<br><br><br><br><br><br><br>
+<div class="subhead"> <h2>Covid-19 Cases in India</h2></div>
+    <div class="wrapper">
+<div class="box_wrapper">
+    <div class="box">
+      <h2>Confirmed Cases</h2>
+      <p>{{ cases }}</p>
 
+    </div>
 
-            <input type="submit" value="Look Up" >
+    <div class="box">
+      <h2>Active</h2>
+      <p>{{ active }}</p>
 
+    </div>
+    <div class="box">
+      <h2>Recovered</h2>
+      <p>{{ recovered }}</p>
+    </div>
+    <div class="box">
+      <h2>Total Deaths</h2>
+      <p>{{ deaths }}</p>
+    </div>
 
-        </form></div>
+  </div>
+ </div>
 
-
-
-
-    </body>
+</body>
 </html>
+
