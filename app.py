@@ -7,17 +7,14 @@ app = Flask(__name__)
 
 @app.route('/home')
 def Newsify_DashBoard():
-    cases=cd.alldata["cases"]
+    cases=cd.alldata["confirmed"]
     deaths=cd.alldata["deaths"]
     recovered=cd.alldata["recovered"]
     active=cd.alldata["active"]
 
-    globalcases = cd.globaldatas["cases"]
-    globaldeaths = cd.globaldatas["deaths"]
-    globalrecovered = cd.globaldatas["recovered"]
-    globalactive = cd.globaldatas["active"]
 
-    return render_template('home.html',cases=cases,deaths=deaths,recovered=recovered,active=active,globalcases=globalcases,globaldeaths=globaldeaths,globalrecovered=globalrecovered,globalactive=globalactive)
+
+    return render_template('home.html',cases=cases,deaths=deaths,recovered=recovered,active=active)
 
 @app.route('/')
 def redirection():

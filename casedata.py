@@ -1,9 +1,13 @@
 import requests
 
-india=requests.get('https://corona.lmao.ninja/v2/countries/India?yesterday=true&strict=true')
+
+
+
+india=requests.get('https://api.covid19india.org/data.json')
 globaldata=requests.get('https://corona.lmao.ninja/v2/all?yesterday=true')
-alldata=india.json()
+current_data=india.json()
 globaldatas=globaldata.json()
+alldata=current_data["statewise"][0]
 
 
 #date=current_data["date"]
