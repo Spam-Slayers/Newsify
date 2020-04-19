@@ -1,1 +1,0 @@
-$(document).ready(function() { $('.chips-placeholder').materialChip({ placeholder: 'Enter a tag', secondaryPlaceholder: '+Tag', });}); import ScrollReveal from 'scrollreveal';
