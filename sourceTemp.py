@@ -53,13 +53,16 @@ def supreme(test):
     top_headlines = newsapi.get_top_headlines(q='corona', language='en', country='in')
     links = {title[i]: urls[i] for i in range(len(title))}
     latest_news =[]
+    latest_urls = []
     for i in top_headlines['articles']:
         latest_news.append(i.get('title'))
+        latest_urls.append(i.get('url'))
+    latest_links = {latest_news[i]: latest_urls[i] for i in range(len(latest_news))}
     print(latest_news)
     if len(intersection) > 3:
-        d = {"truthfulness": True, "intersection": intersection, "links": links,"trending_topics": getTrends(),"latest_news": latest_news}
+        d = {"truthfulness": True, "intersection": intersection, "links": links,"trending_topics": getTrends(),"latest_links": latest_links}
     else:
-        d = {"truthfulness": False, "intersection": intersection, "links": "", "trending_topics": getTrends(),"latest_news": latest_news}
+        d = {"truthfulness": False, "intersection": intersection, "links": "", "trending_topics": getTrends(),"latest_links": latest_links}
     return d
 
 

@@ -33,11 +33,11 @@ def result():
         truth=a["truthfulness"]
         links=a["links"]
         intersection=a["intersection"]
-        latest_news=a["latest_news"]
+        latest_links=a["latest_links"]
 
 
 
-    return render_template('result.html', truth = truth,intersection=intersection,links=links,latest_news=latest_news)
+    return render_template('result.html', truth = truth,intersection=intersection,links=links,latest_links=latest_links)
 
 
 if __name__ == '__main__':
